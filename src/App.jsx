@@ -1,19 +1,28 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Monday from "./components/Monday";
-import Destruct from "./components/Destruct";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Products from "./pages/Products";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
-    <>
-      <Destruct />
-      <Monday />
-      <h1>Hello World!</h1>
-      <div className="App">
-        <h1>Hello World!</h1>
-      </div>
-      ;
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/blog" element={<Blog />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
