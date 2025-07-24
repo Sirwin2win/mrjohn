@@ -52,7 +52,7 @@ short circuit and it uses &&
     { id: 4, name: "Paul Doe", email: "pauldoe@gmail.com" },
   ];
   // npx create-react-app mrjohn
-  // npm create vite
+  // npm create vite, select project name, cd into project name, npm run dev
   return (
     <div>
       {fruits.length > 0 && fruits.map((v) => <p key={v}>{v}</p>)}
