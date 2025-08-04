@@ -1,0 +1,7 @@
+.homePage {
+    color: white;
+    height: 300px;
+    width: 300px;
+    background-image: repeating-linear-gradient(red, blue 10%, yellow 20%);
+    border-radius: 50%;
+}
