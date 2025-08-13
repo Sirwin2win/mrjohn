@@ -50,19 +50,22 @@ short circuit and it uses &&
     { id: 2, name: "Peter Doe", email: "peterdoe@gmail.com" },
     { id: 3, name: "Joel Doe", email: "joeldoe@gmail.com" },
     { id: 4, name: "Paul Doe", email: "pauldoe@gmail.com" },
+    { id: 5, name: "Uche Doe", email: "uchedoe@gmail.com" },
   ];
   // npx create-react-app mrjohn
   // npm create vite, select project name, cd into project name, npm run dev
+  // some comments goes here
   return (
     <div>
-      {fruits.length > 0 && fruits.map((v) => <p key={v}>{v}</p>)}
-      {person.length > 0 &&
-        person.map((v) => (
-          <div key={v.id}>
-            <h5>{v.name}</h5>
+      <div className="row">
+        {person.map((v) => (
+          <div className="col-sm-4" key={v.id}>
+            {" "}
+            <h1>{v.name}</h1>
             <p>{v.email}</p>
           </div>
         ))}
+      </div>
       <h1>Something else happens</h1>
     </div>
   );
