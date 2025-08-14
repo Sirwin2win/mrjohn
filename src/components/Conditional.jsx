@@ -1,72 +1,49 @@
-import React from "react";
+import { useReducer } from "react";
+
+const initialState = {
+  name: "",
+  email: "",
+};
+
+const reducerFunc = function (state, action) {
+  switch (action.type) {
+    case "update":
+  }
+};
 
 const Conditional = () => {
+  const [state, dispatch] = useReducer(reducerFunc, initialState);
   const hr = new Date().getHours();
-  //   const days = new Date().getDay();
 
-  /*
-if...else statement
-ternary operator
-switch statement
-short circuit and it uses &&
-    */
-  //   if (hr < 12) {
-  //     return <p>Good Morning</p>;
-  //   } else {
-  //     return <p>Good Evening {days}</p>;
-  //   }
+  const handleSubmit = function (e) {
+    const name = e.target.value;
+    const value = e.target.value;
+    dispatch({ ...state, [name]: value });
+  };
 
-  //   switch (days) {
-  //     case 0:
-  //       return <p>Sunday</p>;
-  //       break;
-  //     case 1:
-  //       return <p>Monday</p>;
-  //       break;
-  //     case 2:
-  //       return <p>Tuesday</p>;
-  //       break;
-  //     case 3:
-  //       return <p>Wednesday {days}</p>;
-  //       break;
-  //     case 4:
-  //       return <p>Thurs</p>;
-  //       break;
-  //     case 5:
-  //       return <p>Fri</p>;
-  //       break;
-  //     case 6:
-  //       return <p>Sat</p>;
-  //       break;
-  //     default:
-  //       return <p>No match found</p>;
-  //   }
-
-  //   return <div>{hr > 12 ? <h1>Good evening</h1> : <h1>Good Morning</h1>}</div>;
-  // condition?true:false
-  const fruits = ["Apple", "Banana", "Orange", "Cherry"];
-  const person = [
-    { id: 1, name: "Jane Doe", email: "janedoe@gmail.com" },
-    { id: 2, name: "Peter Doe", email: "peterdoe@gmail.com" },
-    { id: 3, name: "Joel Doe", email: "joeldoe@gmail.com" },
-    { id: 4, name: "Paul Doe", email: "pauldoe@gmail.com" },
-    { id: 5, name: "Uche Doe", email: "uchedoe@gmail.com" },
-  ];
-  // npx create-react-app mrjohn
-  // npm create vite, select project name, cd into project name, npm run dev
-  // some comments goes here
+  const handleChange = function (e) {
+    e.preventDefault();
+    return e.target.value;
+  };
   return (
     <div>
-      <div className="row">
-        {person.map((v) => (
-          <div className="col-sm-4" key={v.id}>
-            {" "}
-            <h1>{v.name}</h1>
-            <p>{v.email}</p>
-          </div>
-        ))}
-      </div>
-      <h1>Something else happens</h1>
+      <form>
+        <input
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={state.name}
+        />
+        <input
+          type="text"
+          name="email"
+          onChange={handleChange}
+          value={state.email}
+        />
+        <button onSubmit={() => handleSubmit({ type: "update" })}>
+          Submit
+        </button>
+      </form>
     </div>
   );
 };

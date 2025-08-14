@@ -2,6 +2,7 @@ import React from "react";
 import Hooking3 from "../components/Hooking3";
 import bg1 from "../images/premium_photo-1676998931123-75789162f170.avif";
 import ContactForm from "../components/ContactForm";
+import Hooking4 from "../components/Hooking4";
 
 const Contact = () => {
   return (
@@ -17,6 +18,7 @@ const Contact = () => {
       <div className="container">
         <Hooking3 />
       </div>
+      <Hooking4 />
 
       {/* <h1>Contact Us Page</h1> */}
     </div>
