@@ -7,8 +7,7 @@ import ReduxApi from "../components/ReduxApi";
 const Blog = () => {
   return (
     <div>
-      {/* <ReduxApi /> */}
-      {/* ahlJKDF */}
+      
       <div
         style={{
           backgroundImage: `linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0.5)),url(${bg1})`,
@@ -17,6 +16,7 @@ const Blog = () => {
           backgroundSize: "cover",
         }}
       ></div>
+      <ReduxApi />
       <Conditional />
       <Eventing />
       <h1>Blog Page</h1>
