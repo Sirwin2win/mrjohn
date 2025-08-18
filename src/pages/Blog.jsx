@@ -8,6 +8,7 @@ const Blog = () => {
   return (
     <div>
       {/* <ReduxApi /> */}
+      {/* ahlJKDF */}
       <div
         style={{
           backgroundImage: `linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0.5)),url(${bg1})`,
