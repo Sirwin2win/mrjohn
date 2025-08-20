@@ -7,7 +7,6 @@ import ReduxApi from "../components/ReduxApi";
 const Blog = () => {
   return (
     <div>
-      {/* <ReduxApi /> */}
       {/* ahlJKDF */}
       <div
         style={{
@@ -17,6 +16,7 @@ const Blog = () => {
           backgroundSize: "cover",
         }}
       ></div>
+      <ReduxApi />
       <Conditional />
       <Eventing />
       <h1>Blog Page</h1>

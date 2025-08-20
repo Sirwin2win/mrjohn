@@ -2,16 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaEye, FaStar } from "react-icons/fa";
 import bg1 from "../images/img3.avif";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProductById } from "../features/productDetailSlice";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(0);
+  // const [product, setProduct] = useState(0);
   //   console.log(product);
+  const product = useSelector((state) => state.product.data);
+  const status = useSelector((state) => state.product.status);
+  const error = useSelector((state) => state.product.error);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((json) => setProduct(json));
+    dispatch(fetchProductById(id));
   }, []);
 
   return (

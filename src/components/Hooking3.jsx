@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
 import { FaEye, FaStar } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProducts } from "../features/products/productsSlice";
 
 const Hooking3 = () => {
-  const [products, setProducts] = useState([]);
-  // console.log(products);
+  const products = useSelector((state) => state.products.data);
+  const status = useSelector((state) => state.products.status);
+  const error = useSelector((state) => state.products.error);
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((demo) => demo.json())
-      .then((json) => setProducts(json));
-  }, []);
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, status]);
+  if (status === "Loading") {
+    return <h1>Loading...</h1>;
+  }
+  if (status === "error") {
+    return <h1>Something went wrong</h1>;
+  }
   return (
     <div>
       <div className="row">
