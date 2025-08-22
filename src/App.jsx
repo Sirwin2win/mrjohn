@@ -11,6 +11,7 @@ import Products from "./pages/Products";
 import Blog from "./pages/Blog";
 import ProductDetail from "./components/ProductDetail";
 import Product2Detail from "./components/Product2Detail";
+import Detail from "./components/Detail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/product2/:id" element={<Product2Detail />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<Detail />} />
         </Route>
       </Routes>
     </BrowserRouter>

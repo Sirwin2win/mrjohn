@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../features/productReducer";
 
 const ReduxApi = () => {
-  const { data: products, status } = useSelector((state) => state.products);
+  const { data: products, isLoading,error } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProduct());
