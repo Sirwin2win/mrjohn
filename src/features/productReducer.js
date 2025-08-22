@@ -5,6 +5,11 @@ export const getProduct = createAsyncThunk("getProduct", async () => {
   return data.json();
 });
 
+// export const getProductById = createAsyncThunk("getProductById", async (id) => {
+//   const data = await fetch(`https://fakestoreapi.com/products/${id}`);
+//   return data.json();
+// });
+
 const productSlice = createSlice({
   name: "products",
   initialState: {
@@ -22,7 +27,7 @@ const productSlice = createSlice({
     });
     builder.addCase(getProduct.rejected, (state, action) => {
       state.error = true;
-    });
+    });   
   },
 });
 export default productSlice.reducer;
